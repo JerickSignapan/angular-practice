@@ -1,0 +1,10 @@
+<h1>form works!</h1>
+<form #simpleForm="ngForm" [formGroup]="loginForm" (submit)="getData(simpleForm.value)">
+    <input type="email" ngModel formControlName="email" placeholder="email">
+
+    <h5 *ngIf="email">username is required</h5>
+
+    <br>
+    <input type="password" ngModel formControlName="password" placeholder="password"><br><br>
+    <button>login</button>
+</form>
