@@ -1,11 +1,8 @@
-<h1>{{title}}</h1>
-<hr>
 <app-header [item]="currentItem"></app-header>
-
 <app-task (tasks)="addNewTask($event)"></app-task>
 
 <ul>
-    <li *ngFor="let task of tasks">{{task.name}} <button (click)="deleteTask(task.id)">x</button></li>
+    <li class="task-item" *ngFor="let task of tasks">{{task.name}} <button class="deleteBtn" (click)="deleteTask(task.id)">x</button></li>
 </ul>
 <hr>
 
