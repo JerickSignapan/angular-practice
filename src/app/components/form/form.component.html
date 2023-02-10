@@ -1,10 +1,15 @@
 <h1>form works!</h1>
 <form #simpleForm="ngForm" [formGroup]="loginForm" (submit)="getData(simpleForm.value)">
+
     <input type="email" ngModel formControlName="email" placeholder="email">
 
-    <h5 *ngIf="email">username is required</h5>
+    <h5 *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">username is required</h5>
 
     <br>
-    <input type="password" ngModel formControlName="password" placeholder="password"><br><br>
+    <input type="password" ngModel formControlName="password" placeholder="password">
+    <h5 *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">username is required</h5>
+    <br>
     <button>login</button>
 </form>
+
+<h4>{{message}}</h4>

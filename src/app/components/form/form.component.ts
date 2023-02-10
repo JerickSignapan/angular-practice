@@ -8,6 +8,9 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./form.component.scss'],
 })
 export class FormComponent {
+  userAccount: any = { email: 'jer', password: 'jer123' };
+  message = '';
+
   loginForm = new FormGroup({
     email: new FormControl('', Validators.required),
     password: new FormControl(''),
@@ -18,6 +21,18 @@ export class FormComponent {
   }
 
   getData(data: NgForm) {
+    if (
+      this.loginForm.value.email == this.userAccount.email &&
+      this.loginForm.value.email == this.userAccount.email
+    ) {
+      this.message = 'success';
+    } else {
+      this.message = 'failed';
+    }
+    this.loginForm.reset();
+
+    console.log(this.userAccount);
+    console.log(this.loginForm.value);
     console.log(data);
   }
 }
