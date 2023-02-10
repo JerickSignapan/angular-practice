@@ -1,15 +1,15 @@
-<h1>form works!</h1>
+<h4>form Validation</h4>
 <form #simpleForm="ngForm" [formGroup]="loginForm" (submit)="getData(simpleForm.value)">
 
     <input type="email" ngModel formControlName="email" placeholder="email">
 
-    <h5 *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">username is required</h5>
+    <h5 style="color: red;" *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">username is
+        required</h5>
 
     <br>
     <input type="password" ngModel formControlName="password" placeholder="password">
-    <h5 *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">username is required</h5>
     <br>
     <button>login</button>
 </form>
 
-<h4>{{message}}</h4>
+<h4 [style.color]="textColor">{{message}}</h4>
