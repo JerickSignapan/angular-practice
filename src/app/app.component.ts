@@ -16,6 +16,7 @@ export class AppComponent {
   addNewTask(newTask: string) {
     this.tasks.push({ id: this.tasks.length, name: newTask });
     console.log(this.tasks);
+    
   }
 
   deleteTask(id: number) {
