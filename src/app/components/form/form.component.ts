@@ -1,3 +1,4 @@
+import { style } from '@angular/animations';
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
@@ -10,6 +11,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class FormComponent {
   userAccount: any = { email: 'jer', password: 'jer123' };
   message = '';
+  textColor = '';
 
   loginForm = new FormGroup({
     email: new FormControl('', Validators.required),
@@ -25,9 +27,11 @@ export class FormComponent {
       this.loginForm.value.email == this.userAccount.email &&
       this.loginForm.value.email == this.userAccount.email
     ) {
-      this.message = 'success';
+      this.message = 'Login success';
+      this.textColor = 'green';
     } else {
-      this.message = 'failed';
+      this.message = 'Login failed';
+      this.textColor = 'red';
     }
     this.loginForm.reset();
 
