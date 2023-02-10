@@ -8,9 +8,14 @@ import { Component, Output, EventEmitter } from '@angular/core';
 export class TaskComponent {
   @Output() tasks = new EventEmitter<string>();
   
+  data = "";
 
   addNewTask(value: string) {
     this.tasks.emit(value);
+  
   }
+  
+ 
+  
 
 }
