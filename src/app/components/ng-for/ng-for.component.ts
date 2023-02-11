@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-ng-for',
@@ -6,16 +8,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./ng-for.component.scss'],
 })
 export class NgForComponent {
-  user = [
+  students: any = [
     {
       name: 'John',
-      age: 34,
-      email: 'john@gmail.com',
+      yearLevel: '3rd year',
+      course: 'BSIT',
     },
     {
-      name: 'Peter',
-      age: 35,
-      email: 'peter@gmail.com',
+      name: 'jer',
+      yearLevel: '1st year',
+      course: 'BSED',
     },
   ];
 }
