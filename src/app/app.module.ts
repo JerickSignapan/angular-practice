@@ -9,6 +9,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { TaskComponent } from './components/task/task.component';
 import { NgForComponent } from './components/ng-for/ng-for.component';
 import { FormComponent } from './components/form/form.component';
+import { NgClassComponent } from './components/ng-class/ng-class.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { FormComponent } from './components/form/form.component';
     TaskComponent,
     NgForComponent,
     FormComponent,
+    NgClassComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [],
