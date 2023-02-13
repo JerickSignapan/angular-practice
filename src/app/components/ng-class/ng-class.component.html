@@ -1,0 +1,8 @@
+<h3>ng-class works!</h3>
+
+<div *ngFor="let character of characters">
+    <h1>Student details:</h1>
+    <h3 class="{{character.isStrong? 'is-strong': ''}} border">Name: {{character.name}}</h3>
+    <!-- <h3 [ngClass]="character.isStrong? 'is-strong': ''" class="border">Name: {{character.name}}</h3> -->
+
+</div>
