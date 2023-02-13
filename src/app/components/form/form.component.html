@@ -1,14 +1,17 @@
 <h4>form Validation</h4>
-<form #simpleForm="ngForm" [formGroup]="loginForm" (submit)="getData(simpleForm.value)">
+<form [formGroup]="loginForm" (submit)="getData()">
 
-    <input type="email" ngModel formControlName="email" placeholder="email">
+    <input type="email" formControlName="email" placeholder="email">
 
-    <h5 style="color: red;" *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">username is
+    <h5 style="color: red;" *ngIf="!email.valid && (email.touched || email.dirty)">username is
         required</h5>
 
     <br>
-    <input type="password" ngModel formControlName="password" placeholder="password">
+    <input type="password" formControlName="password" placeholder="password">
     <br>
+    <h5 style="color: red;" *ngIf="password.invalid && password.touched">password is
+        required</h5>
+
     <button>login</button>
 </form>
 
