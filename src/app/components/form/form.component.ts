@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { NgForm } from '@angular/forms';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -12,19 +11,26 @@ export class FormComponent {
   message = '';
   textColor = '';
 
+  email = new FormControl('', [
+    Validators.required,
+    Validators.email,
+    Validators.minLength(5),
+  ]);
+
+  password = new FormControl('', [
+    Validators.required,
+    Validators.minLength(5),
+  ]);
+
   loginForm = new FormGroup({
-    email: new FormControl('', Validators.required),
-    password: new FormControl(''),
+    email: this.email,
+    password: this.password,
   });
 
-  get email() {
-    return this.loginForm.get('email');
-  }
-
-  getData(data: NgForm) {
+  getData() {
     if (
-      this.loginForm.value.email == this.userAccount.email &&
-      this.loginForm.value.email == this.userAccount.email
+      this.email.value === this.userAccount.email &&
+      this.password.value === this.userAccount.password
     ) {
       this.message = 'Login success';
       this.textColor = 'green';
@@ -36,6 +42,5 @@ export class FormComponent {
 
     console.log(this.userAccount);
     console.log(this.loginForm.value);
-    console.log(data);
   }
 }
